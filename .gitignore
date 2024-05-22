@@ -4,5 +4,6 @@
 /composer.lock
 /build.php
 !/.idea/
+.idea/
 !/.swagger-codegen/
 /.swagger-codegen/VERSION
