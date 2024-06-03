@@ -71,6 +71,15 @@ class ApiException extends Exception
      */
     public function __construct($message = "", $code = 0, $responseHeaders = [], $responseBody = null)
     {
+        if($responseBody){
+            $responseData = json_decode($responseBody);
+            if(count($responseData->response->errors) > 0){
+                $error = $responseData->response->errors[0];
+                $code = $error->code;
+                $message = $error->message;
+            }
+        }
+
         parent::__construct($message, $code);
         $this->responseHeaders = $responseHeaders;
         $this->responseBody = $responseBody;
