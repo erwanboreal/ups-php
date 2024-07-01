@@ -43,6 +43,7 @@
                 "*/composer.json",
                 "OAuthClientCredentials/composer.json",
                 "Rating/composer.json",
+                "Paperless/composer.json",
                 "vendor/abantecart/ups-php/*/composer.json"
             ],
             "recurse": true,
