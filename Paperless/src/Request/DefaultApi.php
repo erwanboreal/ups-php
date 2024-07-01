@@ -1481,7 +1481,7 @@ class DefaultApi
      *
      * @throws \UPS\Paperless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \UPS\Paperless\Paperless\PAPERLESSDOCUMENTResponseWrapper
+     * @return mixed
      */
     public function pushToImageRepository($body, $shipper_number, $version, $trans_id = null, $transaction_src = 'testing')
     {
@@ -1548,7 +1548,8 @@ class DefaultApi
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                //ObjectSerializer::deserialize($content, $returnType, []),
+                $content,
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
@@ -1826,7 +1827,7 @@ class DefaultApi
      *
      * @throws \UPS\Paperless\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \UPS\Paperless\Paperless\PAPERLESSDOCUMENTUploadResponseWrapper
+     * @return mixed
      */
     public function upload($body, $shipper_number, $version, $trans_id = null, $transaction_src = 'testing')
     {
@@ -1893,7 +1894,8 @@ class DefaultApi
             }
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                //ObjectSerializer::deserialize($content, $returnType, []),
+                $content,
                 $response->getStatusCode(),
                 $response->getHeaders()
             ];
