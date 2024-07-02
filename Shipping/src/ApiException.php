@@ -76,7 +76,7 @@ class ApiException extends Exception
             if(count($responseData->response->errors) > 0){
                 $error = $responseData->response->errors[0];
                 $code = $error->code;
-                $message = $error->message;
+                $message = "[$code] $error->message";
             }
         }
 
