@@ -79,7 +79,7 @@ class ApiException extends Exception
                 $message = "[$code] $error->message";
             }
         }
-        parent::__construct($message, $code);
+        parent::__construct($message, intval($code));
         $this->responseHeaders = $responseHeaders;
         $this->responseBody = $responseBody;
     }
